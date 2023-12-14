@@ -8,7 +8,7 @@ If you're unsure, after your Istio controlplane is created, look at `kubectl get
 
 ## Cert-Manager
 
-For instance to route with Rancher, you need to install Rancher and create your certificate. For this example, it'll use a self-signed cert:
+For Istio to route with Rancher, you need to install Cert-Manager and create your certificate. For this example, it'll use a self-signed cert:
 
 1. Install cert-manager:
 
