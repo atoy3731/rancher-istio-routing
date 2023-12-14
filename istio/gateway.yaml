@@ -1,0 +1,26 @@
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  name: rancher
+  namespace: cattle-system
+spec:
+  selector:
+    app: rancher-ingressgateway
+  servers:
+  - hosts:
+    - 'rancher.example.com'
+    port:
+      name: http
+      number: 80
+      protocol: HTTP
+    tls:
+      httpsRedirect: true
+  - hosts:
+    - 'rancher.example.com'
+    port:
+      name: https-lol
+      number: 443
+      protocol: HTTPS
+    tls:
+      credentialName: tls-rancher-ingress
+      mode: SIMPLE
